@@ -12,3 +12,34 @@
 // ["Russia", "Denmark", "Kazan"]  -->  []
 
 
+
+string[] readArray = new string[] { "hello", "2", "world", ":-)" };
+string[] controlArray = new string[readArray.Length];
+
+PrintArray(readArray);
+CountSymbols(readArray, controlArray);
+PrintArray(controlArray);
+
+
+
+void PrintArray(string[] useArray)
+{
+    for (int i = 0; i < useArray.Length; i++)
+    {
+        System.Console.Write($"{useArray[i]}  ");
+    }
+    System.Console.WriteLine();
+}
+
+void CountSymbols(string[] readArray, string[] controlArray)
+{
+    int count = 0;
+    for (int i = 0; i < readArray.Length; i++)
+    {
+        if (readArray[i].Length <= 3)
+        {
+            controlArray[count] = readArray[i];
+            count++;
+        }
+    }
+}
